@@ -1,1 +1,1 @@
-Just a js project
+Just a js REST API
