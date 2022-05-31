@@ -5,7 +5,7 @@ pool.connect({
     host: 'localhost',
     port: 5432,
     database: 'socialnetwork',
-    user: 'postgres',
+    user: 'i1rr',
     password: 'mysecretpassword' //you can use it for your email :)
 })
     . then(() => {

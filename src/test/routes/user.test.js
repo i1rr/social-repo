@@ -7,8 +7,8 @@ beforeAll(() => {
     return pool.connect({
         host: 'localhost',
         port: 5432,
-        database: 'socialnetwork',
-        user: 'postgres',
+        database: 'socialnetwork-test',
+        user: 'i1rr',
         password: 'mysecretpassword',
     });
 });
@@ -19,7 +19,6 @@ afterAll(() => {
 
 it('create a user', async () => {
 const startingCount = await UserRepo.count();
-expect(startingCount).toEqual(0);
 
     await request(buildApp())
         .post('/users')
@@ -27,5 +26,5 @@ expect(startingCount).toEqual(0);
         .expect(200);
 
 const finishCount = await UserRepo.count();
-expect(finishCount).toEqual(1);
+expect(finishCount - startingCount).toEqual(1);
 });
